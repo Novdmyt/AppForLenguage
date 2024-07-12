@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,7 +10,7 @@
         android:layout_width="138.57dp"
         android:layout_height="95.25dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="183dp"
+        android:layout_marginTop="136dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,34 +20,31 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/design_default_color_background"
-            app:srcCompat="@drawable/group_create"
-             />
-
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/group_create" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearSpeilen"
         android:layout_width="102.48dp"
         android:layout_height="133.76dp"
-        android:layout_marginStart="248dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="136dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton8"
+            android:id="@+id/imageButtonSpeilen"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/design_default_color_background"
-            app:srcCompat="@drawable/group_add"
-             />
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/group_add" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/linearLayoutNeuesWorte"
         android:layout_width="103.91dp"
         android:layout_height="135.26dp"
         android:layout_marginStart="34dp"
@@ -56,30 +54,129 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutCreate">
 
         <ImageButton
-            android:id="@+id/imageButton13"
+            android:id="@+id/imageButtonNeuWorte"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/design_default_color_background"
-            app:srcCompat="@drawable/group_speilen" />
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/group_16_add" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayoutKorrieren"
         android:layout_width="142.9dp"
         android:layout_height="96.26dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="64dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutNeuesWorte"
+        app:layout_constraintTop_toBottomOf="@+id/linearSpeilen">
 
         <ImageButton
-            android:id="@+id/imageButton12"
+            android:id="@+id/imageButtonKorrigieren"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/design_default_color_background"
-            app:srcCompat="@drawable/group_worte_buch" />
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/group_15_worte" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButtonKorrigiernMenu"
+        android:layout_width="132dp"
+        android:layout_height="131dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNeuesWorteMenu"
+        app:srcCompat="@drawable/group_worte_buch" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSpeilenMenu"
+        android:layout_width="101dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNeuGroupeMenu"
+        app:srcCompat="@drawable/group_speilen" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNeuesWorteMenu"
+        android:layout_width="81dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="32dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonSpeilenMenu"
+        app:srcCompat="@drawable/group_nue_worte" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNeuGroupeMenu"
+        android:layout_width="107dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="32dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/group_neu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSetting"
+        android:layout_width="99dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="28dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearSpeilen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/group__setting" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="44dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="16dp"
+        android:text="Neue Gruppe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCreate" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="92dp"
+        android:text="Speielen"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutKorrieren"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearSpeilen" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="57dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="140dp"
+        android:text="Neues Worte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutNeuesWorte" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="16dp"
+        android:text="Korrigieren"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutKorrieren" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
