@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AppForLanguage</string>
+    <string name="name_create_card">Name eingeben</string>
+    <string name="create_card">Erstellen</string>
 </resources>

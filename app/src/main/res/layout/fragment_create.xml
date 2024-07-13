@@ -5,15 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Додайте тут ваші елементи UI -->
+    <ImageButton
+        android:id="@+id/imageButtonNewWord"
+        android:layout_width="81dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonPlayGame"
+        app:srcCompat="@drawable/group_nue_worte" />
 
-    <TextView
-        android:id="@+id/textView5"
+    <ImageButton
+        android:id="@+id/imageButtonPlayGame"
+        android:layout_width="86dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="92dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonCreateCard"
+        app:srcCompat="@drawable/group_speilen_neu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDictionary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="5dp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/group_dictionary" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCreateCard"
+        android:layout_width="118dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="40dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/group_create_menu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="39dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vector_3_back" />
+
+    <EditText
+        android:id="@+id/editTextNameCard"
+        android:layout_width="278dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="280dp"
+        android:ems="10"
+        android:hint="@string/name_create_card"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCreateCard"
+        android:layout_width="136dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="360dp"
+        android:text="@string/create_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

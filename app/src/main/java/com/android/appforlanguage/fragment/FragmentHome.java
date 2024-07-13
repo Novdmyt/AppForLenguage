@@ -88,7 +88,7 @@ public class FragmentHome extends Fragment {
     }
 
     private void openFragment(Fragment fragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.main, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
