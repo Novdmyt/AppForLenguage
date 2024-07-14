@@ -33,7 +33,7 @@ public class FragmentHome extends Fragment {
         dictionary = view.findViewById(R.id.imageButtonKorrigieren);
         setting = view.findViewById(R.id.imageButtonSetting);
         newCardMenu = view.findViewById(R.id.imageButtonNeuGroupeMenu);
-        addWordMenu = view.findViewById(R.id.imageButtonNeuesWorteMenu);
+        addWordMenu = view.findViewById(R.id.imageButtonNewWordMenu);
         playGameMenu = view.findViewById(R.id.imageButtonSpeilenMenu);
         dictionaryMenu =view.findViewById(R.id.imageButtonKorrigiernMenu);
 

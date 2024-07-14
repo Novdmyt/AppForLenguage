@@ -5,15 +5,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Додайте тут ваші елементи UI -->
-
-    <TextView
-        android:id="@+id/textView6"
+    <ImageButton
+        android:id="@+id/imageButtonPlayGameMenuAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HELLO"
+        android:layout_marginStart="85dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonCreateCardMenuAdd"
+        app:srcCompat="@drawable/group_speilen" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDictionaryMenuAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonAddWordMenuAdd"
+        app:srcCompat="@drawable/group_worte_buch" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAddWordMenuAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonPlayGameMenuAdd"
+        app:srcCompat="@drawable/group_add_word_menu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCreateCardMenuAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/group_neu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBackToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vector_3_back" />
+
+    <Spinner
+        android:id="@+id/spinnerOpenDataBase"
+        android:layout_width="267dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textViewWord"
+        android:layout_width="300dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="57dp"
+        android:drawableEnd="@drawable/group_langue_menu"
+        android:hint="@string/add_words"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerOpenDataBase" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textViewTranslate"
+        android:layout_width="300dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="20dp"
+        android:drawableEnd="@drawable/group_langue_menu"
+        android:hint="@string/translate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWord" />
+
+    <Button
+        android:id="@+id/buttonAddWords"
+        android:layout_width="136dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/add_words"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTranslate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

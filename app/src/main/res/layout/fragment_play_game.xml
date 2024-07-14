@@ -5,13 +5,142 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView7"
+    <ImageButton
+        android:id="@+id/imageButtonCreateMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PLAY GAME"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/group_neu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonPlayGameMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonCreateMenu"
+        app:srcCompat="@drawable/group_speilen_menu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAddNewWordMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonPlayGameMenu"
+        app:srcCompat="@drawable/group_neu_word" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDictionaryMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonPlayGameMenu"
+        app:srcCompat="@drawable/group_dictionary" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBackPlayGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vector_3_back" />
+
+    <Spinner
+        android:id="@+id/spinnerDataBase"
+        android:layout_width="243dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switchMischen"
+        android:layout_width="347dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="35dp"
+        android:text="@string/mischen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTranslation"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="168dp"
+        android:ems="10"
+        android:hint="@string/beispiel"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextWord"
+        android:layout_width="237dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/antwort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTranslation" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSoundHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="28dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/editTextWord"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTranslation"
+        app:srcCompat="@drawable/group_sound" />
+
+    <Button
+        android:id="@+id/buttonCheck"
+        android:layout_width="136dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:text="Überprüfen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextWord" />
+
+    <Button
+        android:id="@+id/buttonHelp"
+        android:layout_width="136dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:text="Hilfe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

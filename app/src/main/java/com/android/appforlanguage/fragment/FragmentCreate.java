@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -52,13 +50,13 @@ public class FragmentCreate extends Fragment {
         buttonPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(new PlayGame());
+                openFragment(new AddWord());
             }
         });
         buttonNewWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openFragment(new AddWord());
+                openFragment(new PlayGame());
             }
         });
         buttonDictionary.setOnClickListener(new View.OnClickListener() {

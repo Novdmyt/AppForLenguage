@@ -2,4 +2,10 @@
     <string name="app_name">AppForLanguage</string>
     <string name="name_create_card">Name eingeben</string>
     <string name="create_card">Erstellen</string>
+    <string name="mischen">Mischen</string>
+    <string name="beispiel">Beispiel</string>
+    <string name="antwort">Antwort</string>
+    <string name="wort">Wort</string>
+    <string name="translate">Übersetzung</string>
+    <string name="add_words">Hinzufüngen</string>
 </resources>
