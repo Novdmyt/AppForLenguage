@@ -137,7 +137,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutKorrieren" />
 
     <ImageButton
-        android:id="@+id/imageButtonNeuGroupeMenu"
+        android:id="@+id/imageButtonNeuGroupeSett"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -148,29 +148,29 @@
         app:srcCompat="@drawable/group_neu" />
 
     <ImageButton
-        android:id="@+id/imageButtonSpeilenMenu"
+        android:id="@+id/imageButtonSpeilenSett"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageButtonNeuGroupeMenu"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNeuGroupeSett"
         app:srcCompat="@drawable/group_speilen_neu" />
 
     <ImageButton
-        android:id="@+id/imageButtonNewWordMenu"
+        android:id="@+id/imageButtonNewWordSett"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonSpeilenMenu"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonSpeilenSett"
         app:srcCompat="@drawable/group_neu_word" />
 
     <ImageButton
-        android:id="@+id/imageButtonKorrigiernMenu"
+        android:id="@+id/imageButtonKorrigiernSett"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -179,7 +179,7 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordMenu"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordSett"
         app:srcCompat="@drawable/group_dictionary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

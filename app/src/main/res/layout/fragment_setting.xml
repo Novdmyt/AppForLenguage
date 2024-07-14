@@ -5,13 +5,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView9"
+    <ImageButton
+        android:id="@+id/imageButtonBackSett"
+        android:layout_width="39dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vector_3_back" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNeuGroupeSett"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SETTING"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/group_neu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonKorrigiernSett"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordSett"
+        app:srcCompat="@drawable/group_dictionary" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSpeilenSett"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNeuGroupeSett"
+        app:srcCompat="@drawable/group_speilen_neu" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNewWordSett"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonSpeilenSett"
+        app:srcCompat="@drawable/group_neu_word" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="106dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="152dp"
+        android:text="Setting"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSelect"
+        android:layout_width="100dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:text="Wählen Sie die Sprechsprace"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+    <Spinner
+        android:id="@+id/spinnerLanguages"
+        android:layout_width="224dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toEndOf="@+id/textViewSelect"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

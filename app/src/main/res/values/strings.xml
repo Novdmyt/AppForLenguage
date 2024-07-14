@@ -8,4 +8,8 @@
     <string name="wort">Wort</string>
     <string name="translate">Übersetzung</string>
     <string name="add_words">Hinzufüngen</string>
+    <string name="englich">Englisch</string>
+    <string name="deutsch">Deutsch</string>
+    <string name="ukrainian">Ukrainian</string>
+    <string name="russian">russian</string>
 </resources>

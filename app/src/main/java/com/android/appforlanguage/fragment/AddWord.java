@@ -4,6 +4,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -17,11 +18,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.android.appforlanguage.R;
 import com.android.appforlanguage.database.DataBase;
+import com.android.appforlanguage.model.Language;
 import com.android.appforlanguage.model.TableViewModel;
 
 import java.util.List;
@@ -39,6 +42,9 @@ public class AddWord extends Fragment {
     private DataBase dbHelper;
     private TableViewModel tableViewModel;
     private ArrayAdapter<String> adapter;
+    private Spinner wordLanguageSpinner;
+    private Spinner translateLanguageSpinner;
+    private Language language;
 
     @Nullable
     @Override
@@ -53,12 +59,17 @@ public class AddWord extends Fragment {
         addWords = view.findViewById(R.id.buttonAddWords);
         viewWord = view.findViewById(R.id.textViewWord);
         viewTranslate = view.findViewById(R.id.textViewTranslate);
+        wordLanguageSpinner = view.findViewById(R.id.wordLanguageSpinner);
+        translateLanguageSpinner = view.findViewById(R.id.translateLanguageSpinner);
 
+        language = new Language(getContext());
         dbHelper = new DataBase(getContext());
         populateTableSpinner();
         addWords.setOnClickListener(v -> addWordToDatabase());
 
         tableViewModel = new ViewModelProvider(requireActivity()).get(TableViewModel.class);
+        setDrawableRightClickListener(viewWord, wordLanguageSpinner, true);
+        setDrawableRightClickListener(viewTranslate, translateLanguageSpinner, false);
         tableViewModel.getNewTableName().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String tableName) {
@@ -66,6 +77,34 @@ public class AddWord extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         });
+
+        backToHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Повернення до попереднього фрагмента
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+        playGameAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFragment(new PlayGame());
+            }
+        });
+        dictionaryMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFragment(new Dictionary());
+            }
+        });
+
+        createCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFragment(new FragmentCreate());
+            }
+        });
+
         return view;
     }
 
@@ -108,6 +147,23 @@ public class AddWord extends Fragment {
         if (drawable != null) {
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
             editText.setCompoundDrawables(null, null, drawable, null);
+            editText.setOnTouchListener((v, event) -> {
+                if (event.getAction() == MotionEvent.ACTION_UP && event.getRawX() >= (editText.getRight() - drawable.getBounds().width())) {
+                    if (isWordEditText) {
+                        language.showWordLanguageMenu(v, spinner, editText);
+                    } else {
+                        language.showTranslationLanguageMenu(v, spinner, editText);
+                    }
+                    return true;
+                }
+                return false;
+            });
         }
+    }
+    private void openFragment(Fragment fragment) {
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.main, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

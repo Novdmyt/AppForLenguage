@@ -32,7 +32,7 @@ public class FragmentCreate extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create, container, false);
 
-        buttonBack = view.findViewById(R.id.imageButtonBack);
+        buttonBack = view.findViewById(R.id.imageButtonBackSett);
         buttonPlayGame = view.findViewById(R.id.imageButtonPlayGame);
         buttonNewWord = view.findViewById(R.id.imageButtonNewWord);
         buttonDictionary = view.findViewById(R.id.imageButtonDictionary);
