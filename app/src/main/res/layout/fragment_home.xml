@@ -99,8 +99,8 @@
         android:id="@+id/textView"
         android:layout_width="44dp"
         android:layout_height="37dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
         android:text="Neue Gruppe"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutCreate" />
@@ -109,10 +109,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="92dp"
+        android:layout_marginStart="164dp"
         android:text="Speielen"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutKorrieren"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/linearSpeilen"
         app:layout_constraintVertical_bias="0.59" />
 
@@ -130,14 +130,14 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="12dp"
         android:text="Korrigieren"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutKorrieren" />
 
     <ImageButton
-        android:id="@+id/imageButtonNeuGroupeSett"
+        android:id="@+id/imageButtonNeuGroupeDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -148,25 +148,25 @@
         app:srcCompat="@drawable/group_neu" />
 
     <ImageButton
-        android:id="@+id/imageButtonSpeilenSett"
+        android:id="@+id/imageButtonSpeilenDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageButtonNeuGroupeSett"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNeuGroupeDic"
         app:srcCompat="@drawable/group_speilen_neu" />
 
     <ImageButton
-        android:id="@+id/imageButtonNewWordSett"
+        android:id="@+id/imageButtonNewWordDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonSpeilenSett"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonSpeilenDic"
         app:srcCompat="@drawable/group_neu_word" />
 
     <ImageButton
@@ -179,7 +179,7 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordSett"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordDic"
         app:srcCompat="@drawable/group_dictionary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

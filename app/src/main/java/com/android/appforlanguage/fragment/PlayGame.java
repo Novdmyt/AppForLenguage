@@ -63,7 +63,7 @@ public class PlayGame extends Fragment {
         createMenu = view.findViewById(R.id.imageButtonCreateMenu);
         addNewWordMenu = view.findViewById(R.id.imageButtonAddNewWordMenu);
         dictionaryMenu = view.findViewById(R.id.imageButtonDictionaryMenu);
-        backPlayGame = view.findViewById(R.id.imageButtonBackPlayGame);
+        backPlayGame = view.findViewById(R.id.imageButtonBackPlayGameDic);
         spinnerDataBase = view.findViewById(R.id.spinnerDataBase);
         switchMix = view.findViewById(R.id.switchMischen);
         soundHelp = view.findViewById(R.id.imageButtonSoundHelp);
@@ -232,7 +232,8 @@ public class PlayGame extends Fragment {
         } else {
             Log.d("TestWord", "Words list is empty or null.");
         }
-    } private void openFragment(Fragment fragment) {
+    }
+    private void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.main, fragment);
         transaction.addToBackStack(null);

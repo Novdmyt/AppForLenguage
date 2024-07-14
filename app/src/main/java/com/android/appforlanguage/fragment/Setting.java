@@ -45,9 +45,9 @@ public class Setting extends Fragment {
 
         buttonBack = view.findViewById(R.id.imageButtonBackSett);
         spinnerLanguages = view.findViewById(R.id.spinnerLanguages);
-        buttonCreate = view.findViewById(R.id.imageButtonNeuGroupeSett);
-        buttonPlayGame = view.findViewById(R.id.imageButtonSpeilenSett);
-        buttonAddData = view.findViewById(R.id.imageButtonNewWordSett);
+        buttonCreate = view.findViewById(R.id.imageButtonNeuGroupeDic);
+        buttonPlayGame = view.findViewById(R.id.imageButtonSpeilenDic);
+        buttonAddData = view.findViewById(R.id.imageButtonNewWordDic);
         buttonDictionary = view.findViewById(R.id.imageButtonKorrigiernSett);
 
         buttonBack.setOnClickListener(new View.OnClickListener() {

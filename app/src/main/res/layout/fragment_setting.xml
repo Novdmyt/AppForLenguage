@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/vector_3_back" />
 
     <ImageButton
-        android:id="@+id/imageButtonNeuGroupeSett"
+        android:id="@+id/imageButtonNeuGroupeDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -37,29 +37,29 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordSett"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordDic"
         app:srcCompat="@drawable/group_dictionary" />
 
     <ImageButton
-        android:id="@+id/imageButtonSpeilenSett"
+        android:id="@+id/imageButtonSpeilenDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageButtonNeuGroupeSett"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNeuGroupeDic"
         app:srcCompat="@drawable/group_speilen_neu" />
 
     <ImageButton
-        android:id="@+id/imageButtonNewWordSett"
+        android:id="@+id/imageButtonNewWordDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonSpeilenSett"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonSpeilenDic"
         app:srcCompat="@drawable/group_neu_word" />
 
     <TextView

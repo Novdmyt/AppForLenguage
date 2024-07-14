@@ -32,9 +32,9 @@ public class FragmentHome extends Fragment {
         playGame = view.findViewById(R.id.imageButtonSpeilen);
         dictionary = view.findViewById(R.id.imageButtonKorrigieren);
         setting = view.findViewById(R.id.imageButtonSetting);
-        newCardMenu = view.findViewById(R.id.imageButtonNeuGroupeSett);
-        addWordMenu = view.findViewById(R.id.imageButtonNewWordSett);
-        playGameMenu = view.findViewById(R.id.imageButtonSpeilenSett);
+        newCardMenu = view.findViewById(R.id.imageButtonNeuGroupeDic);
+        addWordMenu = view.findViewById(R.id.imageButtonNewWordDic);
+        playGameMenu = view.findViewById(R.id.imageButtonSpeilenDic);
         dictionaryMenu =view.findViewById(R.id.imageButtonKorrigiernSett);
 
         View.OnClickListener createClickListener = new View.OnClickListener() {
