@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.appforlanguage.R;
 import com.android.appforlanguage.database.DataBase;
 import com.android.appforlanguage.database.Word;
-import com.android.appforlanguage.model.WordAdapter;
+import com.android.appforlanguage.util.WordAdapter;
 
 import java.util.List;
 import java.util.Locale;

@@ -1,4 +1,4 @@
-package com.android.appforlanguage.model;
+package com.android.appforlanguage.util;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

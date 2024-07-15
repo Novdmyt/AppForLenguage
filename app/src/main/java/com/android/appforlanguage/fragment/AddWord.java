@@ -24,8 +24,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.android.appforlanguage.R;
 import com.android.appforlanguage.database.DataBase;
-import com.android.appforlanguage.model.Language;
-import com.android.appforlanguage.model.TableViewModel;
+import com.android.appforlanguage.util.Language;
+import com.android.appforlanguage.util.TableViewModel;
 
 import java.util.List;
 

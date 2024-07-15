@@ -1,4 +1,4 @@
-package com.android.appforlanguage.model;
+package com.android.appforlanguage.util;
 
 import android.app.AlertDialog;
 import android.content.ContentValues;
