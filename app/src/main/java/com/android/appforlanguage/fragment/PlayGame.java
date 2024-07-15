@@ -35,7 +35,6 @@ import java.util.Locale;
 public class PlayGame extends Fragment {
 
     private ImageButton createMenu;
-   // private ImageButton playGameMenu;
     private ImageButton addNewWordMenu;
     private ImageButton dictionaryMenu;
     private ImageButton backPlayGame;
@@ -55,10 +54,14 @@ public class PlayGame extends Fragment {
     private Locale selectedLanguage = Locale.ENGLISH; // Default language
     private static final String PREFS_NAME = "app_preferences";
     private static final String PREF_LANGUAGE = "selected_language";
+    private static final long DOUBLE_BACK_PRESS_DURATION = 2000; // 2 seconds
+    private long lastBackPressTime = 0;
+    private Toast backPressToast;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View  view = inflater.inflate(R.layout.fragment_play_game, container, false);
+        View view = inflater.inflate(R.layout.fragment_play_game, container, false);
 
         createMenu = view.findViewById(R.id.imageButtonCreateMenu);
         addNewWordMenu = view.findViewById(R.id.imageButtonAddNewWordMenu);
@@ -71,11 +74,11 @@ public class PlayGame extends Fragment {
         buttonHelp = view.findViewById(R.id.buttonHelp);
         wordTextView = view.findViewById(R.id.editTextWord);
         translateEditText = view.findViewById(R.id.editTextTranslation);
+
         backPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Повернення до попереднього фрагмента
-                getActivity().getSupportFragmentManager().popBackStack();
+                openFragment(new FragmentHome());
             }
         });
         addNewWordMenu.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +145,9 @@ public class PlayGame extends Fragment {
 
         return view;
     }
+
+
+
     private void loadTableNames() {
         List<String> tableNames = dbHelper.getTableNames(db);
         tableNames.add(0, ""); // Add empty option at the beginning
@@ -149,6 +155,7 @@ public class PlayGame extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDataBase.setAdapter(adapter);
     }
+
     private void loadWordsFromTable(String tableName) {
         words = dbHelper.getWordsFromTable(db, tableName);
         currentIndex = 0;
@@ -157,12 +164,14 @@ public class PlayGame extends Fragment {
         }
         showNextWord();
     }
+
     private void showNextWord() {
         if (words != null && !words.isEmpty()) {
             wordTextView.setText("");
             translateEditText.setText(words.get(currentIndex).getTranslation());
         }
     }
+
     public void checkTranslation() {
         if (words != null && !words.isEmpty()) {
             String userWord = wordTextView.getText().toString().trim();
@@ -188,11 +197,13 @@ public class PlayGame extends Fragment {
             Toast.makeText(getActivity(), "No words loaded!", Toast.LENGTH_SHORT).show();
         }
     }
+
     public void showHelp() {
         if (words != null && !words.isEmpty()) {
             wordTextView.setText(words.get(currentIndex).getWord());
         }
     }
+
     private void loadSelectedLanguage() {
         SharedPreferences preferences = getActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         String language = preferences.getString(PREF_LANGUAGE, "English"); // Default to English
@@ -214,6 +225,7 @@ public class PlayGame extends Fragment {
                 break;
         }
     }
+
     private void setupTextToSpeech() {
         textToSpeech = new TextToSpeech(getActivity(), status -> {
             if (status == TextToSpeech.SUCCESS) {
@@ -223,6 +235,7 @@ public class PlayGame extends Fragment {
             }
         });
     }
+
     private void speakCurrentWord() {
         if (words != null && !words.isEmpty()) {
             String word = words.get(currentIndex).getWord();
@@ -233,12 +246,14 @@ public class PlayGame extends Fragment {
             Log.d("TestWord", "Words list is empty or null.");
         }
     }
+
     private void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.main, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
     private void showCustomToast() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getView().findViewById(R.id.custom_toast_container));
@@ -248,6 +263,4 @@ public class PlayGame extends Fragment {
         toast.setView(layout);
         toast.show();
     }
-
-
 }

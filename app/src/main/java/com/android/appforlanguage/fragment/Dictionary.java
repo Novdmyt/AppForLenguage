@@ -98,8 +98,7 @@ public class Dictionary extends Fragment {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Повернення до попереднього фрагмента
-                getActivity().getSupportFragmentManager().popBackStack();
+                openFragment(new FragmentHome());
             }
         });
         buttonAddWord.setOnClickListener(new View.OnClickListener() {

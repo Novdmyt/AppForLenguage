@@ -81,8 +81,7 @@ public class AddWord extends Fragment {
         backToHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Повернення до попереднього фрагмента
-                getActivity().getSupportFragmentManager().popBackStack();
+                openFragment(new FragmentHome());
             }
         });
         playGameAdd.setOnClickListener(new View.OnClickListener() {
