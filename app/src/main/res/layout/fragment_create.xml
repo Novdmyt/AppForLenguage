@@ -42,8 +42,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonCreateCard"
-        android:layout_width="118dp"
-        android:layout_height="96dp"
+        android:layout_width="135dp"
+        android:layout_height="104dp"
         android:layout_marginStart="35dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
@@ -55,32 +55,34 @@
         android:id="@+id/imageButtonBackSett"
         android:layout_width="39dp"
         android:layout_height="34dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="76dp"
         android:background="#00FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vector_3_back" />
 
-    <EditText
-        android:id="@+id/editTextNameCard"
-        android:layout_width="278dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="280dp"
-        android:ems="10"
-        android:hint="@string/name_create_card"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/buttonCreateCard"
         android:layout_width="136dp"
         android:layout_height="42dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="400dp"
         android:text="@string/create_card"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNameCard"
+        android:layout_width="278dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="320dp"
+        android:ems="10"
+        android:hint="@string/name_create_card"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,11 +90,11 @@
         android:id="@+id/imageViewSuccess"
         android:layout_width="97dp"
         android:layout_height="112dp"
-        android:layout_marginTop="20dp"
         android:src="@drawable/exclude_ok"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonCreateCard" /> <!-- Спочатку прихований -->
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Спочатку прихований -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
