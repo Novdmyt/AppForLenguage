@@ -5,8 +5,11 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +30,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.android.appforlanguage.R;
 import com.android.appforlanguage.database.DataBase;
 import com.android.appforlanguage.database.Word;
+import com.android.appforlanguage.util.HideKeyboard;
 
 import java.util.Collections;
 import java.util.List;
@@ -78,6 +82,7 @@ public class PlayGame extends Fragment {
         backPlayGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HideKeyboard.hideKeyboard(getActivity());
                 openFragment(new FragmentHome());
             }
         });
@@ -187,14 +192,11 @@ public class PlayGame extends Fragment {
                     }
 
                 }
-                wordTextView.setTextColor(Color.BLACK); // Reset text color to black
                 showNextWord();
             } else {
-                wordTextView.setTextColor(Color.RED); // Set text color to red
-                Toast.makeText(getActivity(), "Incorrect! Try again.", Toast.LENGTH_SHORT).show();
+
+                showCustomToastErrors();
             }
-        } else {
-            Toast.makeText(getActivity(), "No words loaded!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -254,13 +256,48 @@ public class PlayGame extends Fragment {
         transaction.commit();
     }
 
+
+
     private void showCustomToast() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getView().findViewById(R.id.custom_toast_container));
-
         Toast toast = new Toast(getActivity().getApplicationContext());
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setDuration(Toast.LENGTH_SHORT); // Встановіть короткий час показу для Toast
         toast.setView(layout);
+
+        // Отримати координати кнопки
+        int[] location = new int[2];
+        translateEditText.getLocationOnScreen(location);
+        int buttonX = location[0];
+        int buttonY = location[1];
+        // Встановити розташування Toast над кнопкою
+        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, buttonY - translateEditText.getHeight());
+
         toast.show();
+
+        // Використання Handler для приховування Toast через короткий проміжок часу
+        new Handler(Looper.getMainLooper()).postDelayed(() -> toast.cancel(), 800); // 1000 мс = 1 секунда
     }
+
+    private void showCustomToastErrors() {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast_errors, (ViewGroup) getView().findViewById(R.id.custom_toast_container));
+        Toast toast = new Toast(getActivity().getApplicationContext());
+        toast.setDuration(Toast.LENGTH_SHORT); // Встановіть короткий час показу для Toast
+        toast.setView(layout);
+
+        // Отримати координати кнопки
+        int[] location = new int[2];
+        translateEditText.getLocationOnScreen(location);
+        int buttonX = location[0];
+        int buttonY = location[1];
+        // Встановити розташування Toast над кнопкою
+        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, buttonY - translateEditText.getHeight());
+
+        toast.show();
+
+        // Використання Handler для приховування Toast через короткий проміжок часу
+        new Handler(Looper.getMainLooper()).postDelayed(() -> toast.cancel(), 800); // 1000 мс = 1 секунда
+    }
+
 }

@@ -23,16 +23,19 @@
 
     <ImageButton
         android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/trash_delete"
-        android:contentDescription="Delete" />
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="Delete"
+        android:src="@drawable/trash_delete" />
+
     <ImageButton
         android:id="@+id/editButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/edit_edit"
-        android:contentDescription="Edit" />
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:background="#FFFFFF"
+        android:contentDescription="Edit"
+        android:src="@drawable/edit_edit" />
 
 
 </LinearLayout>

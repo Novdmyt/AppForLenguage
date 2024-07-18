@@ -23,6 +23,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.android.appforlanguage.R;
 import com.android.appforlanguage.database.DataBase;
+import com.android.appforlanguage.util.HideKeyboard;
 
 public class FragmentCreate extends Fragment {
 
@@ -48,6 +49,7 @@ public class FragmentCreate extends Fragment {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HideKeyboard.hideKeyboard(getActivity());
                 openFragment(new FragmentHome());
             }
         });
@@ -101,7 +103,7 @@ public class FragmentCreate extends Fragment {
                 dataBase.createTable(db, tableName);
                 showCustomToast();  // Викликаємо користувацький Toast
                 tableNameEditText.getText().clear(); // Очистити EditText
-                hideKeyboard(); // Сховати клавіатуру
+                HideKeyboard.hideKeyboard(getActivity()); // Сховати клавіатуру
             } else {
                 showCustomToastError();
             }
@@ -173,11 +175,11 @@ public class FragmentCreate extends Fragment {
         // Використання Handler для приховування Toast через короткий проміжок часу
         new Handler(Looper.getMainLooper()).postDelayed(toast::cancel, 1000); // 1000 мс = 1 секунда
     }
-    private void hideKeyboard() {
+   /* private void hideKeyboard() {
         View view = getActivity().getCurrentFocus();
         if (view != null) {
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
-    }
+    }*/
 }

@@ -28,8 +28,8 @@
         android:id="@+id/linearSpeilen"
         android:layout_width="102.48dp"
         android:layout_height="133.76dp"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="140dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -47,8 +47,8 @@
         android:id="@+id/linearLayoutNeuesWorte"
         android:layout_width="103.91dp"
         android:layout_height="135.26dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="120dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutCreate">
@@ -59,23 +59,23 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            app:srcCompat="@drawable/group_16_add"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/group_16_add" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayoutKorrieren"
         android:layout_width="142.9dp"
         android:layout_height="96.26dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="120dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toEndOf="@+id/linearLayoutNeuesWorte"
         app:layout_constraintTop_toBottomOf="@+id/linearSpeilen">
 
         <ImageButton
             android:id="@+id/imageButtonKorrigieren"
-            android:layout_width="0dp"
+            android:layout_width="124dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00FFFFFF"
@@ -97,11 +97,13 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="44dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="61dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/kavoon_regular"
         android:text="Neue Gruppe"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutCreate" />
 
@@ -109,20 +111,24 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
+        android:layout_marginStart="136dp"
+        android:fontFamily="@font/kavoon_regular"
         android:text="Speielen"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutKorrieren"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/linearSpeilen"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.268" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="57dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="140dp"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="164dp"
+        android:fontFamily="@font/kavoon_regular"
         android:text="Neues Worte"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayoutNeuesWorte" />
 
@@ -130,9 +136,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/kavoon_regular"
         android:text="Korrigieren"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutKorrieren" />
 
@@ -181,5 +189,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordDic"
         app:srcCompat="@drawable/group_dictionary" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

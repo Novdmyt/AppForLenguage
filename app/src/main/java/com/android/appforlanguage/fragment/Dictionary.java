@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.appforlanguage.R;
 import com.android.appforlanguage.database.DataBase;
 import com.android.appforlanguage.database.Word;
+import com.android.appforlanguage.util.HideKeyboard;
 import com.android.appforlanguage.util.WordAdapter;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class Dictionary extends Fragment {
     private ImageButton buttonPlayGame;
     private ImageButton buttonAddWord;
     private ImageButton buttonCreateNew;
-    private ImageButton buttonDictionary;
+   // private ImageButton buttonDictionary;
     private Spinner spinnerDataBase;
     private SearchView searchViewDic;
     private RecyclerView recyclerViewDic;
@@ -54,7 +55,7 @@ public class Dictionary extends Fragment {
       buttonPlayGame = view.findViewById(R.id.imageButtonSpeilenDic);
       buttonAddWord = view.findViewById(R.id.imageButtonNewWordDic);
       buttonCreateNew = view.findViewById(R.id.imageButtonNeuGroupeDic);
-      buttonDictionary = view.findViewById(R.id.imageButtonDictionaryDic);
+     // buttonDictionary = view.findViewById(R.id.imageButtonDictionaryDic);
       spinnerDataBase = view.findViewById(R.id.spinnerDataBaseDic);
       searchViewDic = view.findViewById(R.id.searchViewDic);//настоить поиск
       recyclerViewDic = view.findViewById(R.id.recyclerViewDic);
@@ -65,7 +66,7 @@ public class Dictionary extends Fragment {
         setupTextToSpeech();
 
         loadTableNames();
-        refreshTableNames();
+
         spinnerDataBase.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -98,6 +99,7 @@ public class Dictionary extends Fragment {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HideKeyboard.hideKeyboard(getActivity());
                 openFragment(new FragmentHome());
             }
         });
@@ -120,12 +122,7 @@ public class Dictionary extends Fragment {
                 openFragment(new FragmentCreate());
             }
         });
-        buttonDictionary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFragment(new Dictionary());
-            }
-        });
+
         return view;
     }
     private void setupTextToSpeech() {

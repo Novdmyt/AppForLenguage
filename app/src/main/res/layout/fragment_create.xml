@@ -71,7 +71,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/kavoon_regular"/>
 
     <EditText
         android:id="@+id/editTextNameCard"
@@ -81,20 +82,14 @@
         android:ems="10"
         android:hint="@string/name_create_card"
         android:inputType="text"
+        android:fontFamily="@font/kavoon_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageViewSuccess"
-        android:layout_width="97dp"
-        android:layout_height="112dp"
-        android:src="@drawable/exclude_ok"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Спочатку прихований -->
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

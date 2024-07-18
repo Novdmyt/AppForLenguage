@@ -12,4 +12,5 @@
     <string name="deutsch">Deutsch</string>
     <string name="ukrainian">Ukrainian</string>
     <string name="russian">russian</string>
+    <string name="error">такое имя существует</string>
 </resources>

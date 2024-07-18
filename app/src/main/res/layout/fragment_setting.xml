@@ -6,17 +6,6 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/imageButtonBackSett"
-        android:layout_width="39dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vector_3_back" />
-
-    <ImageButton
         android:id="@+id/imageButtonNeuGroupeDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,34 +55,47 @@
         android:id="@+id/textViewName"
         android:layout_width="106dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="148dp"
         android:text="Setting"
         android:textSize="24sp"
+        android:fontFamily="@font/kavoon_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewSelect"
-        android:layout_width="100dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="Wählen Sie die Sprechsprace"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
 
     <Spinner
         android:id="@+id/spinnerLanguages"
         android:layout_width="224dp"
         android:layout_height="44dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toEndOf="@+id/textViewSelect"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBackSett"
+        android:layout_width="39dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="76dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vector_3_back" />
+
+    <TextView
+        android:id="@+id/textViewSelect"
+        android:layout_width="110dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/kavoon_regular"
+        android:text="Wählen Sie die Sprechsprace"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

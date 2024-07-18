@@ -3,6 +3,9 @@ package com.android.appforlanguage.fragment;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,6 +27,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.android.appforlanguage.R;
 import com.android.appforlanguage.database.DataBase;
+import com.android.appforlanguage.util.HideKeyboard;
 import com.android.appforlanguage.util.Language;
 import com.android.appforlanguage.util.TableViewModel;
 
@@ -81,6 +85,7 @@ public class AddWord extends Fragment {
         backToHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HideKeyboard.hideKeyboard(getActivity());
                 openFragment(new FragmentHome());
             }
         });
@@ -134,11 +139,20 @@ public class AddWord extends Fragment {
     private void showCustomToast() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getView().findViewById(R.id.custom_toast_container));
-
-        Toast toast = new Toast(getContext());
+        Toast toast = new Toast(getActivity().getApplicationContext());
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
+
+        // Отримати координати кнопки
+        int[] location = new int[2];
+        viewWord.getLocationOnScreen(location);
+        int buttonX = location[0];
+        int buttonY = location[1];
+        // Встановити розташування Toast над кнопкою
+        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, buttonY - viewWord.getHeight());
+
         toast.show();
+        new Handler(Looper.getMainLooper()).postDelayed(() -> toast.cancel(), 800); // 1000 мс = 1 секунда
     }
 
     private void setDrawableRightClickListener(EditText editText, Spinner spinner, boolean isWordEditText) {
@@ -148,17 +162,21 @@ public class AddWord extends Fragment {
             editText.setCompoundDrawables(null, null, drawable, null);
             editText.setOnTouchListener((v, event) -> {
                 if (event.getAction() == MotionEvent.ACTION_UP && event.getRawX() >= (editText.getRight() - drawable.getBounds().width())) {
-                    if (isWordEditText) {
-                        language.showWordLanguageMenu(v, spinner, editText);
-                    } else {
-                        language.showTranslationLanguageMenu(v, spinner, editText);
-                    }
+                    editText.requestFocus();  // Зробити EditText активним
+                    editText.post(() -> {
+                        if (isWordEditText) {
+                            language.showWordLanguageMenu(v, spinner, editText);
+                        } else {
+                            language.showTranslationLanguageMenu(v, spinner, editText);
+                        }
+                    });
                     return true;
                 }
                 return false;
             });
         }
     }
+
     private void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.main, fragment);
