@@ -42,7 +42,7 @@ public class FragmentCreate extends Fragment {
         buttonBack = view.findViewById(R.id.imageButtonBackSett);
         buttonPlayGame = view.findViewById(R.id.imageButtonPlayGame);
         buttonNewWord = view.findViewById(R.id.imageButtonNewWord);
-        buttonDictionary = view.findViewById(R.id.imageButtonDictionary);
+        buttonDictionary = view.findViewById(R.id.imageButtonKorrigiernSett);
         createButtonCard = view.findViewById(R.id.buttonCreateCard);
         tableNameEditText = view.findViewById(R.id.editTextNameCard);
 

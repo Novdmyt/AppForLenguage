@@ -160,22 +160,28 @@ public class AddWord extends Fragment {
         if (drawable != null) {
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
             editText.setCompoundDrawables(null, null, drawable, null);
-            editText.setOnTouchListener((v, event) -> {
-                if (event.getAction() == MotionEvent.ACTION_UP && event.getRawX() >= (editText.getRight() - drawable.getBounds().width())) {
-                    editText.requestFocus();  // Зробити EditText активним
-                    editText.post(() -> {
-                        if (isWordEditText) {
-                            language.showWordLanguageMenu(v, spinner, editText);
-                        } else {
-                            language.showTranslationLanguageMenu(v, spinner, editText);
-                        }
-                    });
+        }
+
+        editText.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                int drawableWidth = drawable.getBounds().width();
+                int drawablePadding = editText.getCompoundDrawablePadding();
+                int drawableAreaStart = editText.getWidth() - editText.getPaddingRight() - drawableWidth - drawablePadding;
+
+                if (event.getX() >= drawableAreaStart) {
+                    if (isWordEditText) {
+                        language.showWordLanguageMenu(v, spinner, editText);
+                    } else {
+                        language.showTranslationLanguageMenu(v, spinner, editText);
+                    }
                     return true;
                 }
-                return false;
-            });
-        }
+            }
+            return false;
+        });
     }
+
+
 
     private void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();

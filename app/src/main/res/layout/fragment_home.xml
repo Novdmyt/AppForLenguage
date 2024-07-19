@@ -28,8 +28,8 @@
         android:id="@+id/linearSpeilen"
         android:layout_width="102.48dp"
         android:layout_height="133.76dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="136dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -167,10 +167,10 @@
         app:srcCompat="@drawable/group_speilen_neu" />
 
     <ImageButton
-        android:id="@+id/imageButtonNewWordDic"
+        android:id="@+id/imageButtonNewWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -182,12 +182,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWordDic"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonNewWord"
         app:srcCompat="@drawable/group_dictionary" />
 
 

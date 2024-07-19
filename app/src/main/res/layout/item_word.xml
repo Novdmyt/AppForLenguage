@@ -33,7 +33,7 @@
         android:id="@+id/editButton"
         android:layout_width="43dp"
         android:layout_height="43dp"
-        android:background="#FFFFFF"
+        android:background="#00FFFFFF"
         android:contentDescription="Edit"
         android:src="@drawable/edit_edit" />
 

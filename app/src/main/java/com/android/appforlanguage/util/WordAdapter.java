@@ -5,10 +5,13 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.speech.tts.TextToSpeech;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -23,9 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder> {
+public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder> implements Filterable {
 
     private List<Word> words;
+    private List<Word> wordsFiltered;
     private TextToSpeech tts;
     private Locale selectedLanguage;
     private Context context;
@@ -34,6 +38,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     public WordAdapter(Context context, TextToSpeech tts, Locale selectedLanguage, String tableName) {
         this.words = new ArrayList<>();
+        this.wordsFiltered = new ArrayList<>();
         this.tts = tts;
         this.selectedLanguage = selectedLanguage;
         this.context = context;
@@ -43,11 +48,8 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     public void setWords(List<Word> words) {
         this.words = words;
+        this.wordsFiltered = new ArrayList<>(words);
         notifyDataSetChanged();
-    }
-
-    public void filter(String query) {
-        // Implement filtering logic here
     }
 
     @NonNull
@@ -59,7 +61,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull WordViewHolder holder, int position) {
-        Word word = words.get(position);
+        Word word = wordsFiltered.get(position);
         holder.wordTextView.setText(word.getWord());
         holder.translationTextView.setText(word.getTranslation());
 
@@ -129,7 +131,40 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     @Override
     public int getItemCount() {
-        return words.size();
+        return wordsFiltered.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                List<Word> filteredList = new ArrayList<>();
+
+                if (TextUtils.isEmpty(filterPattern)) {
+                    filteredList.addAll(words);
+                } else {
+                    for (Word word : words) {
+                        if (word.getWord().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(word);
+                        }
+                    }
+                }
+
+                FilterResults results = new FilterResults();
+                results.values = filteredList;
+                return results;
+            }
+
+            @SuppressWarnings("unchecked")
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                wordsFiltered.clear();
+                wordsFiltered.addAll((List<Word>) results.values);
+                notifyDataSetChanged();
+            }
+        };
     }
 
     static class WordViewHolder extends RecyclerView.ViewHolder {

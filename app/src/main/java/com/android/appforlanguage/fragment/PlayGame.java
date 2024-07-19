@@ -119,8 +119,6 @@ public class PlayGame extends Fragment {
                 String selectedTable = (String) spinnerDataBase.getSelectedItem();
                 if (selectedTable != null && !selectedTable.isEmpty()) {
                     loadWordsFromTable(selectedTable);
-                } else {
-                    Toast.makeText(getActivity(), "Please select a table", Toast.LENGTH_SHORT).show();
                 }
             }
 

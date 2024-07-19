@@ -53,7 +53,7 @@ public class Dictionary extends Fragment {
 
       buttonBack = view.findViewById(R.id.imageButtonBackPlayGameDic);
       buttonPlayGame = view.findViewById(R.id.imageButtonSpeilenDic);
-      buttonAddWord = view.findViewById(R.id.imageButtonNewWordDic);
+      buttonAddWord = view.findViewById(R.id.imageButtonNewWord);
       buttonCreateNew = view.findViewById(R.id.imageButtonNeuGroupeDic);
      // buttonDictionary = view.findViewById(R.id.imageButtonDictionaryDic);
       spinnerDataBase = view.findViewById(R.id.spinnerDataBaseDic);
@@ -80,21 +80,25 @@ public class Dictionary extends Fragment {
             }
         });
 
+
+
+        recyclerViewDic.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+       // recyclerViewDic.setAdapter(wordAdapter);
         searchViewDic.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                wordAdapter.filter(query);
+                wordAdapter.getFilter().filter(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                wordAdapter.filter(newText);
+                wordAdapter.getFilter().filter(newText);
                 return false;
             }
         });
 
-        recyclerViewDic.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
